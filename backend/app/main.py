@@ -4,7 +4,10 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 from .core.config import settings
 from .core.database import Base, engine
-from .api.routes import auth, users, categories, annonces, messages, favoris
+from .api.routes import (
+    auth, users, categories, annonces, messages, favoris,
+    reviews, alerts, notifications, analytics, admin, boost, geolocation
+)
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -38,6 +41,13 @@ app.include_router(categories.router, prefix=settings.API_V1_STR)
 app.include_router(annonces.router, prefix=settings.API_V1_STR)
 app.include_router(messages.router, prefix=settings.API_V1_STR)
 app.include_router(favoris.router, prefix=settings.API_V1_STR)
+app.include_router(reviews.router, prefix=f"{settings.API_V1_STR}/reviews", tags=["reviews"])
+app.include_router(alerts.router, prefix=f"{settings.API_V1_STR}/alerts", tags=["alerts"])
+app.include_router(notifications.router, prefix=f"{settings.API_V1_STR}/notifications", tags=["notifications"])
+app.include_router(analytics.router, prefix=f"{settings.API_V1_STR}/analytics", tags=["analytics"])
+app.include_router(admin.router, prefix=f"{settings.API_V1_STR}/admin", tags=["admin"])
+app.include_router(boost.router, prefix=f"{settings.API_V1_STR}/boost", tags=["boost"])
+app.include_router(geolocation.router, prefix=f"{settings.API_V1_STR}/geolocation", tags=["geolocation"])
 
 
 @app.get("/")
