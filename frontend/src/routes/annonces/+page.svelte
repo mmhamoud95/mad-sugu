@@ -57,16 +57,16 @@
 	<title>Annonces - MadSugu</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-8">
-	<div class="mb-8">
-		<h1 class="text-3xl font-bold mb-4">Toutes les annonces</h1>
+<div class="container mx-auto px-4 py-6 md:py-8">
+	<div class="mb-6 md:mb-8">
+		<h1 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Toutes les annonces</h1>
 		
 		<!-- Filters -->
-		<div class="card mb-6">
+		<div class="card mb-6 p-4 md:p-6">
 			<form on:submit|preventDefault={handleFilterSubmit} class="space-y-4">
-				<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
 					<div>
-						<label for="search" class="block text-sm font-medium text-gray-700 mb-1">
+						<label for="search" class="block text-xs md:text-sm font-medium text-gray-700 mb-1">
 							Recherche
 						</label>
 						<input
@@ -74,12 +74,12 @@
 							type="text"
 							bind:value={search}
 							placeholder="Mots-clés..."
-							class="input"
+							class="input text-sm md:text-base"
 						/>
 					</div>
 					
 					<div>
-						<label for="city" class="block text-sm font-medium text-gray-700 mb-1">
+						<label for="city" class="block text-xs md:text-sm font-medium text-gray-700 mb-1">
 							Ville
 						</label>
 						<input
@@ -87,12 +87,12 @@
 							type="text"
 							bind:value={city}
 							placeholder="Ex: Dakar"
-							class="input"
+							class="input text-sm md:text-base"
 						/>
 					</div>
 					
 					<div>
-						<label for="min_price" class="block text-sm font-medium text-gray-700 mb-1">
+						<label for="min_price" class="block text-xs md:text-sm font-medium text-gray-700 mb-1">
 							Prix min
 						</label>
 						<input
@@ -100,12 +100,12 @@
 							type="number"
 							bind:value={min_price}
 							placeholder="0"
-							class="input"
+							class="input text-sm md:text-base"
 						/>
 					</div>
 					
 					<div>
-						<label for="max_price" class="block text-sm font-medium text-gray-700 mb-1">
+						<label for="max_price" class="block text-xs md:text-sm font-medium text-gray-700 mb-1">
 							Prix max
 						</label>
 						<input
@@ -113,13 +113,13 @@
 							type="number"
 							bind:value={max_price}
 							placeholder="Illimité"
-							class="input"
+							class="input text-sm md:text-base"
 						/>
 					</div>
 				</div>
 				
 				<div class="flex justify-end">
-					<button type="submit" class="btn-primary">
+					<button type="submit" class="btn-primary text-sm md:text-base w-full sm:w-auto">
 						Rechercher
 					</button>
 				</div>
@@ -139,15 +139,15 @@
 			</div>
 		</div>
 	{:else if annonces.length > 0}
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
 			{#each annonces as annonce}
 				<AnnonceCard {annonce} />
 			{/each}
 		</div>
 	{:else}
 		<div class="text-center py-12 text-gray-600">
-			<p class="text-lg">Aucune annonce trouvée</p>
-			<p class="mt-2">Essayez de modifier vos critères de recherche</p>
+			<p class="text-base md:text-lg">Aucune annonce trouvée</p>
+			<p class="mt-2 text-sm md:text-base">Essayez de modifier vos critères de recherche</p>
 		</div>
 	{/if}
 </div>
