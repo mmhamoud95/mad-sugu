@@ -97,7 +97,7 @@
 		<!-- Mobile Menu -->
 		{#if mobileMenuOpen}
 			<div class="md:hidden py-4 border-t">
-				<div class="mb-4 lg:hidden">
+				<div class="mb-4">
 					<form action="/recherche" method="GET">
 						<input 
 							type="text" 
