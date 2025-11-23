@@ -1,0 +1,62 @@
+{
+  "name": "MadSugu - Petites Annonces",
+  "short_name": "MadSugu",
+  "description": "Plateforme de petites annonces et ventes en ligne pour l'Afrique de l'Ouest",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#059669",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "business"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Nouvelle annonce",
+      "short_name": "Publier",
+      "description": "Créer une nouvelle annonce",
+      "url": "/annonces/new",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Mes annonces",
+      "short_name": "Mes annonces",
+      "url": "/profile/annonces",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "short_name": "Messages",
+      "url": "/messages",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

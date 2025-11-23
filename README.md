@@ -27,18 +27,23 @@ MadSugu est une application web complète de petites annonces et ventes en ligne
 - ✅ Optimisation des images
 - ✅ API REST complète avec documentation Swagger
 
-### 🔄 À venir (Phases 2 & 3)
+### ✅ Phase 2 - Implémenté
+
+- ✅ Système d'évaluations et notes
+- ✅ Alertes personnalisées
+- ✅ Boost et mise en avant d'annonces
+- ✅ Dashboard administrateur
+- ✅ Notifications push
+- ✅ PWA (Progressive Web App)
+- ✅ Géolocalisation avancée
+- ✅ Analytics et statistiques
+
+### 🔄 À venir (Phase 3)
 
 - [ ] Paiement Mobile Money (Orange Money, MTN, Moov)
-- [ ] Système d'évaluations et notes
-- [ ] Alertes personnalisées
-- [ ] Boost et mise en avant d'annonces
-- [ ] Dashboard administrateur
-- [ ] Notifications push
-- [ ] PWA (Progressive Web App)
-- [ ] Géolocalisation avancée
 - [ ] Support multilingue
-- [ ] Analytics et statistiques
+- [ ] Email/SMS notifications
+- [ ] Maps integration avancée
 
 ## 🏗️ Architecture
 
@@ -211,6 +216,45 @@ La documentation interactive de l'API est disponible à :
 - `POST /api/v1/favorites/{annonce_id}` - Ajouter
 - `DELETE /api/v1/favorites/{annonce_id}` - Retirer
 - `GET /api/v1/favorites/check/{annonce_id}` - Vérifier
+
+#### Reviews (Phase 2)
+- `POST /api/v1/reviews/` - Créer un avis
+- `GET /api/v1/reviews/user/{user_id}` - Avis d'un utilisateur
+- `PUT /api/v1/reviews/{id}` - Modifier un avis
+- `DELETE /api/v1/reviews/{id}` - Supprimer un avis
+
+#### Alerts (Phase 2)
+- `POST /api/v1/alerts/` - Créer une alerte
+- `GET /api/v1/alerts/` - Mes alertes
+- `PUT /api/v1/alerts/{id}` - Modifier une alerte
+- `DELETE /api/v1/alerts/{id}` - Supprimer une alerte
+
+#### Notifications (Phase 2)
+- `GET /api/v1/notifications/` - Liste des notifications
+- `PUT /api/v1/notifications/{id}/read` - Marquer comme lu
+- `PUT /api/v1/notifications/mark-all-read` - Tout marquer comme lu
+
+#### Boost (Phase 2)
+- `GET /api/v1/boost/prices` - Prix des boosts
+- `POST /api/v1/boost/` - Booster une annonce
+- `POST /api/v1/boost/{id}/urgent` - Marquer urgent
+
+#### Analytics (Phase 2)
+- `POST /api/v1/analytics/views` - Tracker une vue
+- `GET /api/v1/analytics/summary` - Résumé analytics
+- `GET /api/v1/analytics/user/{id}` - Analytics utilisateur
+
+#### Geolocation (Phase 2)
+- `GET /api/v1/geolocation/nearby` - Recherche à proximité
+- `GET /api/v1/geolocation/cities` - Villes populaires
+- `GET /api/v1/geolocation/heatmap` - Données heatmap
+
+#### Admin (Phase 2)
+- `GET /api/v1/admin/stats/dashboard` - Stats dashboard
+- `GET /api/v1/admin/users` - Liste utilisateurs
+- `PUT /api/v1/admin/annonces/{id}/approve` - Approuver annonce
+
+📘 **Documentation complète**: Voir [PHASE2_FEATURES.md](PHASE2_FEATURES.md)
 
 ## 🌍 Adaptations pour l'Afrique de l'Ouest
 

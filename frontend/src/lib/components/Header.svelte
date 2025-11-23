@@ -1,6 +1,7 @@
 <script>
 	import { user, logout } from '$lib/stores/auth';
 	import { goto } from '$app/navigation';
+	import NotificationBell from './NotificationBell.svelte';
 	
 	let mobileMenuOpen = false;
 	
@@ -47,6 +48,7 @@
 					<a href="/favoris" class="text-gray-700 hover:text-primary">
 						Favoris
 					</a>
+					<NotificationBell />
 					<div class="relative group">
 						<button class="flex items-center space-x-2 text-gray-700 hover:text-primary">
 							<img 
