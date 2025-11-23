@@ -50,13 +50,13 @@
 	<title>Connexion - MadSugu</title>
 </svelte:head>
 
-<div class="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-	<div class="max-w-md w-full space-y-8">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 py-8 md:py-12 px-4 sm:px-6 lg:px-8">
+	<div class="max-w-md w-full space-y-6 md:space-y-8">
 		<div>
-			<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+			<h2 class="mt-4 md:mt-6 text-center text-2xl md:text-3xl font-extrabold text-gray-900">
 				Connexion à votre compte
 			</h2>
-			<p class="mt-2 text-center text-sm text-gray-600">
+			<p class="mt-2 text-center text-sm md:text-base text-gray-600">
 				Ou
 				<a href="/auth/register" class="font-medium text-primary hover:text-primary/90">
 					créez un nouveau compte
@@ -64,16 +64,16 @@
 			</p>
 		</div>
 		
-		<form class="mt-8 space-y-6" on:submit|preventDefault={handleLogin}>
+		<form class="mt-6 md:mt-8 space-y-5 md:space-y-6" on:submit|preventDefault={handleLogin}>
 			{#if error}
-				<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+				<div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
 					{error}
 				</div>
 			{/if}
 			
 			<div class="rounded-md shadow-sm space-y-4">
 				<div>
-					<label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+					<label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">
 						Email
 					</label>
 					<input
@@ -82,13 +82,13 @@
 						type="email"
 						required
 						bind:value={email}
-						class="input"
+						class="input text-base"
 						placeholder="votre@email.com"
 					/>
 				</div>
 				
 				<div>
-					<label for="password" class="block text-sm font-medium text-gray-700 mb-1">
+					<label for="password" class="block text-sm font-medium text-gray-700 mb-1.5">
 						Mot de passe
 					</label>
 					<input
@@ -97,13 +97,13 @@
 						type="password"
 						required
 						bind:value={password}
-						class="input"
+						class="input text-base"
 						placeholder="••••••••"
 					/>
 				</div>
 			</div>
 			
-			<div class="flex items-center justify-between">
+			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
 				<div class="flex items-center">
 					<input
 						id="remember-me"
@@ -111,12 +111,12 @@
 						type="checkbox"
 						class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
 					/>
-					<label for="remember-me" class="ml-2 block text-sm text-gray-900">
+					<label for="remember-me" class="ml-2 block text-xs sm:text-sm text-gray-900">
 						Se souvenir de moi
 					</label>
 				</div>
 				
-				<div class="text-sm">
+				<div class="text-xs sm:text-sm">
 					<a href="/auth/forgot-password" class="font-medium text-primary hover:text-primary/90">
 						Mot de passe oublié ?
 					</a>
@@ -127,7 +127,7 @@
 				<button
 					type="submit"
 					disabled={loading}
-					class="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+					class="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed text-base py-3"
 				>
 					{loading ? 'Connexion...' : 'Se connecter'}
 				</button>
